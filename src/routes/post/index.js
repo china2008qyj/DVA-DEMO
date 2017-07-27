@@ -10,7 +10,7 @@ const TabPane = Tabs.TabPane;
 const EnumPostStatus = {
   UNPUBLISH: 1,
   PUBLISHED: 2,
-}
+};
 const Index = ({ post, dispatch, loading, location }) => {
   const { list, pagination } = post;
   const { query = {}, pathname } = location;
