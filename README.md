@@ -1,1 +1,2 @@
 DVA  ADMIN
+#smartserver
