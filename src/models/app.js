@@ -4,7 +4,7 @@ import { routerRedux } from 'dva/router'
 import { parse } from 'qs'
 import config from 'config'
 import { EnumRoleType } from 'enums'
-const { prefix } = config
+const { prefix } = config;
 
 export default {
   namespace: 'app',
@@ -30,10 +30,10 @@ export default {
   subscriptions: {
 
     setup ({ dispatch }) {
-      dispatch({ type: 'query' })
-      let tid
+      dispatch({ type: 'query' });
+      let tid;
       window.onresize = () => {
-        clearTimeout(tid)
+        clearTimeout(tid);
         tid = setTimeout(() => {
           dispatch({ type: 'changeNavbar' })
         }, 300)
@@ -46,11 +46,11 @@ export default {
     *query ({
       payload,
     }, { call, put }) {
-      const { success, user } = yield call(query, payload)
+      const { success, user } = yield call(query, payload);
       if (success && user) {
-        const { list } = yield call(menusService.query)
-        const { permissions } = user
-        let menu = list
+        const { list } = yield call(menusService.query);
+        const { permissions } = user;
+        let menu = list;
         if (permissions.role === EnumRoleType.ADMIN || permissions.role === EnumRoleType.DEVELOPER) {
           permissions.visit = list.map(item => item.id)
         } else {
@@ -59,7 +59,7 @@ export default {
               permissions.visit.includes(item.id),
               item.mpid ? permissions.visit.includes(item.mpid) || item.mpid === '-1' : true,
               item.bpid ? permissions.visit.includes(item.bpid) : true,
-            ]
+            ];
             return cases.every(_ => _)
           })
         }
@@ -70,13 +70,13 @@ export default {
             permissions,
             menu,
           },
-        })
+        });
         if (location.pathname === '/login') {
           yield put(routerRedux.push('/dashboard'))
         }
       } else {
         if (config.openPages && config.openPages.indexOf(location.pathname) < 0) {
-          let from = location.pathname
+          let from = location.pathname;
           window.location = `${location.origin}/login?from=${from}`
         }
       }
@@ -85,7 +85,7 @@ export default {
     *logout ({
       payload,
     }, { call, put }) {
-      const data = yield call(logout, parse(payload))
+      const data = yield call(logout, parse(payload));
       if (data.success) {
         yield put({ type: 'query' })
       } else {
@@ -96,8 +96,8 @@ export default {
     *changeNavbar ({
       payload,
     }, { put, select }) {
-      const { app } = yield(select(_ => _))
-      const isNavbar = document.body.clientWidth < 769
+      const { app } = yield(select(_ => _));
+      const isNavbar = document.body.clientWidth < 769;
       if (isNavbar !== app.isNavbar) {
         yield put({ type: 'handleNavbar', payload: isNavbar })
       }
@@ -113,7 +113,7 @@ export default {
     },
 
     switchSider (state) {
-      localStorage.setItem(`${prefix}siderFold`, !state.siderFold)
+      localStorage.setItem(`${prefix}siderFold`, !state.siderFold);
       return {
         ...state,
         siderFold: !state.siderFold,
@@ -121,7 +121,7 @@ export default {
     },
 
     switchTheme (state) {
-      localStorage.setItem(`${prefix}darkTheme`, !state.darkTheme)
+      localStorage.setItem(`${prefix}darkTheme`, !state.darkTheme);
       return {
         ...state,
         darkTheme: !state.darkTheme,

@@ -4,8 +4,8 @@ import * as usersService from '../services/users'
 import { pageModel } from './common'
 import { config } from 'utils'
 
-const { query } = usersService
-const { prefix } = config
+const { query } = usersService;
+const { prefix } = config;
 
 export default modelExtend(pageModel, {
   namespace: 'user',
@@ -34,7 +34,7 @@ export default modelExtend(pageModel, {
   effects: {
 
     *query ({ payload = {} }, { call, put }) {
-      const data = yield call(query, payload)
+      const data = yield call(query, payload);
       if (data) {
         yield put({
           type: 'querySuccess',
@@ -51,10 +51,10 @@ export default modelExtend(pageModel, {
     },
 
     *'delete' ({ payload }, { call, put, select }) {
-      const data = yield call(remove, { id: payload })
-      const { selectedRowKeys } = yield select(_ => _.user)
+      const data = yield call(remove, { id: payload });
+      const { selectedRowKeys } = yield select(_ => _.user);
       if (data.success) {
-        yield put({ type: 'updateState', payload: { selectedRowKeys: selectedRowKeys.filter(_ => _ !== payload) } })
+        yield put({ type: 'updateState', payload: { selectedRowKeys: selectedRowKeys.filter(_ => _ !== payload) } });
         yield put({ type: 'query' })
       } else {
         throw data
@@ -62,9 +62,9 @@ export default modelExtend(pageModel, {
     },
 
     *'multiDelete' ({ payload }, { call, put }) {
-      const data = yield call(usersService.remove, payload)
+      const data = yield call(usersService.remove, payload);
       if (data.success) {
-        yield put({ type: 'updateState', payload: { selectedRowKeys: [] } })
+        yield put({ type: 'updateState', payload: { selectedRowKeys: [] } });
         yield put({ type: 'query' })
       } else {
         throw data
@@ -72,9 +72,9 @@ export default modelExtend(pageModel, {
     },
 
     *create ({ payload }, { call, put }) {
-      const data = yield call(create, payload)
+      const data = yield call(create, payload);
       if (data.success) {
-        yield put({ type: 'hideModal' })
+        yield put({ type: 'hideModal' });
         yield put({ type: 'query' })
       } else {
         throw data
@@ -82,11 +82,11 @@ export default modelExtend(pageModel, {
     },
 
     *update ({ payload }, { select, call, put }) {
-      const id = yield select(({ user }) => user.currentItem.id)
-      const newUser = { ...payload, id }
-      const data = yield call(update, newUser)
+      const id = yield select(({ user }) => user.currentItem.id);
+      const newUser = { ...payload, id };
+      const data = yield call(update, newUser);
       if (data.success) {
-        yield put({ type: 'hideModal' })
+        yield put({ type: 'hideModal' });
         yield put({ type: 'query' })
       } else {
         throw data
@@ -106,7 +106,7 @@ export default modelExtend(pageModel, {
     },
 
     switchIsMotion (state) {
-      localStorage.setItem(`${prefix}userIsMotion`, !state.isMotion)
+      localStorage.setItem(`${prefix}userIsMotion`, !state.isMotion);
       return { ...state, isMotion: !state.isMotion }
     },
 
