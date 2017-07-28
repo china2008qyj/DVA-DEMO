@@ -12,7 +12,7 @@ export default {
   subscriptions: {
     setup ({ dispatch, history }) {
       history.listen(() => {
-        const match = pathToRegexp('/user/:id').exec(location.pathname)
+        const match = pathToRegexp('/user/:id').exec(location.pathname);
         if (match) {
           dispatch({ type: 'query', payload: { id: match[1] } })
         }
@@ -24,8 +24,8 @@ export default {
     *query ({
       payload,
     }, { call, put }) {
-      const data = yield call(query, payload)
-      const { success, message, status, ...other } = data
+      const data = yield call(query, payload);
+      const { success, message, status, ...other } = data;
       if (success) {
         yield put({
           type: 'querySuccess',
@@ -41,7 +41,7 @@ export default {
 
   reducers: {
     querySuccess (state, { payload }) {
-      const { data } = payload
+      const { data } = payload;
       return {
         ...state,
         data,
