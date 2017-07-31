@@ -11,7 +11,7 @@ const countUpProps = {
   useEasing: true,
   useGrouping: true,
   separator: ',',
-}
+};
 
 function Cpu ({ usage, space, cpu, data }) {
   return (<div className={styles.cpu}>
@@ -57,6 +57,6 @@ Cpu.propTypes = {
   usage: PropTypes.number,
   space: PropTypes.number,
   cpu: PropTypes.number,
-}
+};
 
 export default Cpu
