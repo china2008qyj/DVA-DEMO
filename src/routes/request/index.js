@@ -11,7 +11,7 @@ import {
   Button,
 } from 'antd'
 const { api } = config;
-const { dashboard, users, userLogin, user, v1test, v2test } = api;
+const { dashboard, users, userLogin, user, v1test, v2test,v3test } = api;
 
 const requestOptions = [
   {
@@ -85,6 +85,12 @@ const requestOptions = [
     url: v2test,
     desc: 'intercept request by mock.js',
     method: 'get',
+  },
+  {
+    url:v3test,
+    desc:'This is  only a  test!',
+    method:'post',
+    dataType:'json',
   },
   {
     url: 'http://42.159.196.238:3978/web/getDeviceInfo',
