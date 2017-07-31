@@ -17,7 +17,7 @@ const status = {
     color: color.red,
     text: 'REJECTED',
   },
-}
+};
 
 function Comments ({ data }) {
   const columns = [
@@ -39,7 +39,7 @@ function Comments ({ data }) {
         </div>
       </div>,
     },
-  ]
+  ];
   return (
     <div className={styles.comments}>
       <Table pagination={false} showHeader={false} columns={columns} rowKey={(record, key) => key} dataSource={data.filter((item, key) => key < 3)} />
@@ -49,6 +49,6 @@ function Comments ({ data }) {
 
 Comments.propTypes = {
   data: PropTypes.array,
-}
+};
 
 export default Comments

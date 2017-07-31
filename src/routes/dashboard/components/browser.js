@@ -17,7 +17,7 @@ const status = {
   4: {
     color: color.yellow,
   },
-}
+};
 
 function Browser ({ data }) {
   const columns = [
@@ -31,12 +31,12 @@ function Browser ({ data }) {
       className: styles.percent,
       render: (text, it) => <Tag color={status[it.status].color}>{text}%</Tag>,
     },
-  ]
+  ];
   return <Table pagination={false} showHeader={false} columns={columns} rowKey={(record, key) => key} dataSource={data} />
 }
 
 Browser.propTypes = {
   data: PropTypes.array,
-}
+};
 
 export default Browser
