@@ -26,7 +26,7 @@ let database = [
     id: '21',
     mpid: '-1',
     bpid: '2',
-    name: 'User Detail',
+    name: '详细信息',
     route: '/user/:id',
   },
   {

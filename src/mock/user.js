@@ -153,7 +153,6 @@ module.exports = {
               const start = new Date(other[key][0]).getTime();
               const end = new Date(other[key][1]).getTime();
               const now = new Date(item[key]).getTime();
-
               if (start && end) {
                 return now >= start && now <= end
               }

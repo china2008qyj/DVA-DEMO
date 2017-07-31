@@ -15,7 +15,7 @@ const Login = ({
     validateFieldsAndScroll,
   },
 }) => {
-  const { loginLoading } = login
+  const { loginLoading } = login;
 
   function handleOk () {
     validateFieldsAndScroll((errors, values) => {
@@ -64,7 +64,7 @@ const Login = ({
       </form>
     </div>
   )
-}
+};
 
 Login.propTypes = {
   form: PropTypes.object,

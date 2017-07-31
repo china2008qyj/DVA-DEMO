@@ -7,6 +7,6 @@ const Error = () => <div className="content-inner">
     <Icon type="frown-o" />
     <h1>404 Not Found</h1>
   </div>
-</div>
+</div>;
 
 export default Error
