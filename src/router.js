@@ -7,7 +7,7 @@ const registerModel = (app, model) => {
   if (!(app._models.filter(m => m.namespace === model.namespace).length === 1)) {
     app.model(model)
   }
-}
+};
 
 const Routers = function ({ history, app }) {
   const routes = [
@@ -16,7 +16,7 @@ const Routers = function ({ history, app }) {
       component: App,
       getIndexRoute (nextState, cb) {
         require.ensure([], require => {
-          registerModel(app, require('./models/dashboard'))
+          registerModel(app, require('./models/dashboard'));
           cb(null, { component: require('./routes/dashboard/') })
         }, 'dashboard')
       },
@@ -25,7 +25,7 @@ const Routers = function ({ history, app }) {
           path: 'dashboard',
           getComponent (nextState, cb) {
             require.ensure([], require => {
-              registerModel(app, require('./models/dashboard'))
+              registerModel(app, require('./models/dashboard'));
               cb(null, require('./routes/dashboard/'))
             }, 'dashboard')
           },
@@ -33,7 +33,7 @@ const Routers = function ({ history, app }) {
           path: 'user',
           getComponent (nextState, cb) {
             require.ensure([], require => {
-              registerModel(app, require('./models/user'))
+              registerModel(app, require('./models/user'));
               cb(null, require('./routes/user/'))
             }, 'user')
           },
@@ -41,7 +41,7 @@ const Routers = function ({ history, app }) {
           path: 'user/:id',
           getComponent (nextState, cb) {
             require.ensure([], require => {
-              registerModel(app, require('./models/user/detail'))
+              registerModel(app, require('./models/user/detail'));
               cb(null, require('./routes/user/detail/'))
             }, 'user-detail')
           },
@@ -49,7 +49,7 @@ const Routers = function ({ history, app }) {
           path: 'login',
           getComponent (nextState, cb) {
             require.ensure([], require => {
-              registerModel(app, require('./models/login'))
+              registerModel(app, require('./models/login'));
               cb(null, require('./routes/login/'))
             }, 'login')
           },
@@ -85,7 +85,7 @@ const Routers = function ({ history, app }) {
           path: 'post',
           getComponent (nextState, cb) {
             require.ensure([], require => {
-              registerModel(app, require('./models/post'))
+              registerModel(app, require('./models/post'));
               cb(null, require('./routes/post/'))
             }, 'post')
           },
@@ -113,14 +113,14 @@ const Routers = function ({ history, app }) {
         },
       ],
     },
-  ]
+  ];
 
   return <Router history={history} routes={routes} />
-}
+};
 
 Routers.propTypes = {
   history: PropTypes.object,
   app: PropTypes.object,
-}
+};
 
 export default Routers

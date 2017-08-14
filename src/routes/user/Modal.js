@@ -48,7 +48,7 @@ const modal = ({
       <Form layout="horizontal">
         <FormItem label="Name" hasFeedback {...formItemLayout}>
           {getFieldDecorator('name', {
-            initialValue: item.name,
+            initialValue: item.deviceCDK,
             rules: [
               {
                 required: true,

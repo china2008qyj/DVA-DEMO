@@ -7,8 +7,8 @@ import pathToRegexp from 'path-to-regexp'
 
 const Menus = ({ siderFold, darkTheme, handleClickNavMenu, navOpenKeys, changeOpenKeys, menu }) => {
   // 生成树状
-  const menuTree = arrayToTree(menu.filter(_ => _.mpid !== '-1'), 'id', 'mpid')
-  const levelMap = {}
+  const menuTree = arrayToTree(menu.filter(_ => _.mpid !== '-1'), 'id', 'mpid');
+  const levelMap = {};
 
   // 递归生成菜单
   const getMenus = (menuTreeN, siderFoldN) => {
@@ -38,31 +38,31 @@ const Menus = ({ siderFold, darkTheme, handleClickNavMenu, navOpenKeys, changeOp
         </Menu.Item>
       )
     })
-  }
-  const menuItems = getMenus(menuTree, siderFold)
+  };
+  const menuItems = getMenus(menuTree, siderFold);
 
   // 保持选中
   const getAncestorKeys = (key) => {
-    let map = {}
+    let map = {};
     const getParent = (index) => {
-      const result = [String(levelMap[index])]
+      const result = [String(levelMap[index])];
       if (levelMap[result[0]]) {
         result.unshift(getParent(result[0])[0])
       }
       return result
-    }
+    };
     for (let index in levelMap) {
       if ({}.hasOwnProperty.call(levelMap, index)) {
         map[index] = getParent(index)
       }
     }
     return map[key] || []
-  }
+  };
 
   const onOpenChange = (openKeys) => {
-    const latestOpenKey = openKeys.find(key => !navOpenKeys.includes(key))
-    const latestCloseKey = navOpenKeys.find(key => !openKeys.includes(key))
-    let nextOpenKeys = []
+    const latestOpenKey = openKeys.find(key => !navOpenKeys.includes(key));
+    const latestCloseKey = navOpenKeys.find(key => !openKeys.includes(key));
+    let nextOpenKeys = [];
     if (latestOpenKey) {
       nextOpenKeys = getAncestorKeys(latestOpenKey).concat(latestOpenKey)
     }
@@ -70,34 +70,34 @@ const Menus = ({ siderFold, darkTheme, handleClickNavMenu, navOpenKeys, changeOp
       nextOpenKeys = getAncestorKeys(latestCloseKey)
     }
     changeOpenKeys(nextOpenKeys)
-  }
+  };
 
   let menuProps = !siderFold ? {
     onOpenChange,
     openKeys: navOpenKeys,
-  } : {}
+  } : {};
 
 
   // 寻找选中路由
-  let currentMenu
-  let defaultSelectedKeys
+  let currentMenu;
+  let defaultSelectedKeys;
   for (let item of menu) {
     if (item.route && pathToRegexp(item.route).exec(location.pathname)) {
-      currentMenu = item
+      currentMenu = item;
       break
     }
   }
   const getPathArray = (array, current, pid, id) => {
-    let result = [String(current[id])]
+    let result = [String(current[id])];
     const getPath = (item) => {
       if (item && item[pid]) {
-        result.unshift(String(item[pid]))
+        result.unshift(String(item[pid]));
         getPath(queryArray(array, item[pid], id))
       }
-    }
-    getPath(current)
+    };
+    getPath(current);
     return result
-  }
+  };
   if (currentMenu) {
     defaultSelectedKeys = getPathArray(menu, currentMenu, 'mpid', 'id')
   }
@@ -113,7 +113,7 @@ const Menus = ({ siderFold, darkTheme, handleClickNavMenu, navOpenKeys, changeOp
       {menuItems}
     </Menu>
   )
-}
+};
 
 Menus.propTypes = {
   menu: PropTypes.array,
@@ -123,6 +123,5 @@ Menus.propTypes = {
   handleClickNavMenu: PropTypes.func,
   navOpenKeys: PropTypes.array,
   changeOpenKeys: PropTypes.func,
-}
-
+};
 export default Menus

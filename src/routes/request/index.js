@@ -93,10 +93,9 @@ const requestOptions = [
     dataType:'json',
   },
   {
-    url: 'http://42.159.196.238:3978/web/getDeviceInfo',
+    url: 'http://42.159.247.58:4324/AppProcess/1.0/devices/8888',
     desc: 'cross-domain request, but match config.baseURL(./src/utils/config.js)',
-    method:'post',
-    dataType:'json',
+    method:'delete',
   },
   {
     url: 'http://www.zuimeitianqi.com/zuimei/queryWeather',

@@ -15,7 +15,7 @@ export default modelExtend(pageModel, {
     modalVisible: false,
     modalType: 'create',
     selectedRowKeys: [],
-    isMotion: localStorage.getItem(`${prefix}userIsMotion`) === 'true',
+    isMotion: 'true',
   },
 
   subscriptions: {
@@ -32,13 +32,13 @@ export default modelExtend(pageModel, {
   },
 
   effects: {
-    *query ({ payload = {} }, { call, put }) {
+    *query ({ payload = {} }, { call, put }){
       const data = yield call(query, payload);
       if (data) {
         yield put({
           type: 'querySuccess',
           payload: {
-            list: data.data,
+            list: data.msg,
             pagination: {
               current: Number(payload.page) || 1,
               pageSize: Number(payload.pageSize) || 10,
@@ -49,7 +49,7 @@ export default modelExtend(pageModel, {
       }
     },
 
-    *'delete' ({ payload }, { call, put, select }) {
+    *delete ({ payload }, { call, put, select }) {
       const data = yield call(remove, { id: payload });
       const { selectedRowKeys } = yield select(_ => _.user);
       if (data.success) {

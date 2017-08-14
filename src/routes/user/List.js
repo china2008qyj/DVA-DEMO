@@ -25,54 +25,39 @@ const List = ({ onDeleteItem, onEditItem, isMotion, location, ...tableProps }) =
 
   const columns = [
     {
-      title: 'Avatar',
-      dataIndex: 'avatar',
-      key: 'avatar',
-      width: 64,
-      className: styles.avatar,
-      render: (text) => <img alt={'avatar'} width={24} src={text} />,
-    }, {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
+      title: '设备SN码',
+      dataIndex: 'deviceCDK',
+      key: 'deviceCDK',
       render: (text, record) => <Link to={`user/${record.id}`}>{text}</Link>,
     }, {
-      title: 'NickName',
-      dataIndex: 'nickName',
-      key: 'nickName',
+      title: '家庭名称',
+      dataIndex: 'familyID',
+      key: 'familyID',
     }, {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
+      title: '所在区域',
+      dataIndex: 'locationPetName',
+      key: 'locationPetName',
     }, {
-      title: 'Gender',
-      dataIndex: 'isMale',
-      key: 'isMale',
+      title: '所在位置',
+      dataIndex: 'locationPetName1',
+      key: 'locationPetName1',
+    }, {
+      title: '设备IP',
+      dataIndex: 'ip',
+      key: 'ip',
+    }, {
+      title: '设备类型',
+      dataIndex: 'type',
+      key: 'type',
       render: (text) => <span>{text
-            ? 'Male'
-            : 'Female'}</span>,
-    }, {
-      title: 'Phone',
-      dataIndex: 'phone',
-      key: 'phone',
-    }, {
-      title: 'Email',
-      dataIndex: 'email',
-      key: 'email',
-    }, {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
-    }, {
-      title: 'CreateTime',
-      dataIndex: 'createTime',
-      key: 'createTime',
+        ? '墙面机'
+        : '其他'}</span>,
     }, {
       title: 'Operation',
       key: 'operation',
       width: 100,
       render: (text, record) => {
-        return <DropOption onMenuClick={e => handleMenuClick(record, e)} menuOptions={[{ key: '1', name: '编辑' }, { key: '2', name: '删除' }]} />
+        return <DropOption onMenuClick={e => handleMenuClick(record, e)} menuOptions={[{ key: '1', name: '编辑' }, { key: '2', name: '删除' } ,{key:'3' ,name:'重启'},{key:'4' ,name:'升级'}]} />
       },
     },
   ];

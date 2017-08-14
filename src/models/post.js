@@ -23,7 +23,11 @@ export default modelExtend(pageModel, {
     *query ({
       payload,
     }, { call, put }) {
-      const data = yield call(query, payload);
+      const data= yield call(query, payload);
+      // const data1  = JSON.parse(data2);
+      // const data  = data1.msg;
+      // console.log(data);
+      // console.log(data1);
       if (data.success) {
         yield put({
           type: 'querySuccess',

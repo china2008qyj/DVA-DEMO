@@ -1,10 +1,10 @@
 import axios from 'axios'
 import qs from 'qs'
-import { YQL, CORS } from './config'
 import jsonp from 'jsonp'
 import lodash from 'lodash'
 import pathToRegexp from 'path-to-regexp'
 import { message } from 'antd'
+import { YQL, CORS } from './config'
 
 const fetch = (options) => {
   let {
@@ -13,8 +13,9 @@ const fetch = (options) => {
     fetchType,
     url,
   } = options;
-  console.log("options:"+options);
-  const cloneData = lodash.cloneDeep(data);
+
+  const cloneData = lodash.cloneDeep(data);  //取到参数
+
   try {
     let domin = '';
     if (url.match(/[a-zA-z]+:\/\/[^/]*/)) {
@@ -22,10 +23,15 @@ const fetch = (options) => {
       url = url.slice(domin.length)
     }
     const match = pathToRegexp.parse(url);
+    console.log(match);
     url = pathToRegexp.compile(url)(data);
     for (let item of match) {
+      console.log("进来for!!!");
+      console.log(cloneData);
       if (item instanceof Object && item.name in cloneData) {
-        delete cloneData[item.name]
+        console.log("进来if!!");
+        delete cloneData[item.name];
+        console.log(cloneData);
       }
     }
     url = domin + url
@@ -33,7 +39,6 @@ const fetch = (options) => {
     message.error(e.message)
   }
 
-  //有毛病 JSONP
   if (fetchType === 'JSONP') {
     return new Promise((resolve, reject) => {
       jsonp(url, {
@@ -41,8 +46,6 @@ const fetch = (options) => {
         name: `jsonp_${new Date().getTime()}`,
         timeout: 4000,
       }, (error, result) => {
-
-        console.log("err"+error);
         if (error) {
           reject(error)
         }
@@ -57,14 +60,15 @@ const fetch = (options) => {
 
   switch (method.toLowerCase()) {
     case 'get':
+      console.log("进来get!!!!")
       return axios.get(url, {
         params: cloneData,
       });
     case 'delete':
-      return axios.delete(url, {
-        data: cloneData,
-      });
+      console.log("进来delete!!!!")
+      return axios.delete(url);
     case 'post':
+      console.log("进来POST!!!!")
       return axios.post(url, cloneData);
     case 'put':
       return axios.put(url, cloneData);
@@ -79,20 +83,22 @@ export default function request (options) {
   if (options.url && options.url.indexOf('//') > -1) {
     const origin = `${options.url.split('//')[0]}//${options.url.split('//')[1].split('/')[0]}`;
     if (window.location.origin !== origin) {
-      if(options.dataType !== null)
-      {
-        options.fetchType = options.dataType;
-      }
-      else if (CORS && CORS.indexOf(origin) > -1) {
-        options.fetchType = 'CORS'
-      } else if (YQL && YQL.indexOf(origin) > -1) {
-        options.fetchType = 'YQL'
-      }
-      else {
-        options.fetchType = 'JSONP'
-      }
+      // if(options.dataType !== null)
+      // {
+      //   options.fetchType = options.dataType;
+      // }
+      // else if (CORS && CORS.indexOf(origin) > -1) {
+      //   options.fetchType = 'CORS'
+      // } else if (YQL && YQL.indexOf(origin) > -1) {
+      //   options.fetchType = 'YQL'
+      // }
+      // else {
+      //   options.fetchType = 'JSONP'
+      // }
+      options.fetchType = 'CORS'
     }
   }
+
   return fetch(options).then((response) => {
     const { statusText, status } = response;
     let data = options.fetchType === 'YQL' ? response.data.query.results.json : response.data;
