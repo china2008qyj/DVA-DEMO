@@ -18,3 +18,11 @@ export async function remove (params) {
     data: params,
   })
 }
+
+export async function restart(params) {
+  return request({
+    url:users,
+    method: 'get',
+    data: params,
+  })
+}

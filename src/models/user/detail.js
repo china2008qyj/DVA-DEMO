@@ -30,7 +30,7 @@ export default {
         yield put({
           type: 'querySuccess',
           payload: {
-            data: other,
+            data: other.msg[0],
           },
         })
       } else {

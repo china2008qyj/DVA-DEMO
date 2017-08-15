@@ -16,7 +16,7 @@ const User = ({ location, dispatch, user, loading }) => {
     visible: modalVisible,
     maskClosable: false,
     confirmLoading: loading.effects['user/update'],
-    title: `${modalType === 'create' ? '添加新家庭' : '编辑家庭'}`,
+    title: `${modalType === 'create' ? '添加新家庭' : '编辑设备信息'}`,
     wrapClassName: 'vertical-center-modal',
     onOk (data) {
       dispatch({
@@ -51,6 +51,12 @@ const User = ({ location, dispatch, user, loading }) => {
     onDeleteItem (id) {
       dispatch({
         type: 'user/delete',
+        payload: id,
+      })
+    },
+    onRestart(id){
+      dispatch({
+        type: 'user/restart',
         payload: id,
       })
     },

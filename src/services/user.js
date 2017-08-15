@@ -5,8 +5,8 @@ const {usersdetail} =api;
 const { users } = api;
 export async function query (params) {
   return request({
-    url: user,
-    method: 'post',
+    url: usersdetail,
+    method: 'get',
     data: params,
   })
 }
@@ -23,6 +23,14 @@ export async function remove (params) {
   return request({
     url: usersdetail,
     method: 'delete',
+    data: params,
+  })
+}
+
+export async function restart(params) {
+  return  request({
+    url:usersdetail,
+    method: 'get',
     data: params,
   })
 }

@@ -23,15 +23,11 @@ const fetch = (options) => {
       url = url.slice(domin.length)
     }
     const match = pathToRegexp.parse(url);
-    console.log(match);
+    // console.log(match);
     url = pathToRegexp.compile(url)(data);
     for (let item of match) {
-      console.log("进来for!!!");
-      console.log(cloneData);
       if (item instanceof Object && item.name in cloneData) {
-        console.log("进来if!!");
         delete cloneData[item.name];
-        console.log(cloneData);
       }
     }
     url = domin + url
@@ -60,15 +56,12 @@ const fetch = (options) => {
 
   switch (method.toLowerCase()) {
     case 'get':
-      console.log("进来get!!!!")
       return axios.get(url, {
         params: cloneData,
       });
     case 'delete':
-      console.log("进来delete!!!!")
       return axios.delete(url);
     case 'post':
-      console.log("进来POST!!!!")
       return axios.post(url, cloneData);
     case 'put':
       return axios.put(url, cloneData);

@@ -9,7 +9,7 @@ import { Link } from 'dva/router'
 
 const confirm = Modal.confirm;
 
-const List = ({ onDeleteItem, onEditItem, isMotion, location, ...tableProps }) => {
+const List = ({ onDeleteItem, onEditItem, onRestart,isMotion, location, ...tableProps }) => {
   const handleMenuClick = (record, e) => {
     if (e.key === '1') {
       onEditItem(record)
@@ -18,6 +18,13 @@ const List = ({ onDeleteItem, onEditItem, isMotion, location, ...tableProps }) =
         title: '您确定要删除这条记录吗?',
         onOk () {
           onDeleteItem(record.id)
+        },
+      })
+    }else if(e.key === '3'){
+      confirm({
+        title: '您确定要重启该设备么?',
+        onOk(){
+          onRestart(record.id)
         },
       })
     }
@@ -57,7 +64,7 @@ const List = ({ onDeleteItem, onEditItem, isMotion, location, ...tableProps }) =
       key: 'operation',
       width: 100,
       render: (text, record) => {
-        return <DropOption onMenuClick={e => handleMenuClick(record, e)} menuOptions={[{ key: '1', name: '编辑' }, { key: '2', name: '删除' } ,{key:'3' ,name:'重启'},{key:'4' ,name:'升级'}]} />
+        return <DropOption  onMenuClick={e => handleMenuClick(record, e)}  menuOptions={[{ key: '1', name: '编   辑' }, { key: '2', name: '删   除' } ,{key:'3' ,name:'重   启'},{key:'4' ,name:'升   级'}]} />
       },
     },
   ];
@@ -88,6 +95,7 @@ const List = ({ onDeleteItem, onEditItem, isMotion, location, ...tableProps }) =
 List.propTypes = {
   onDeleteItem: PropTypes.func,
   onEditItem: PropTypes.func,
+  onRestart: PropTypes.func,
   isMotion: PropTypes.bool,
   location: PropTypes.object,
 };
