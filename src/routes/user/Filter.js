@@ -33,17 +33,17 @@ const Filter = ({
     setFieldsValue,
   },
 }) => {
-  const handleFields = (fields) => {
-    const { createTime } = fields;
-    if (createTime.length) {
-      fields.createTime = [createTime[0].format('YYYY-MM-DD'), createTime[1].format('YYYY-MM-DD')]
-    }
-    return fields
-  };
+  // const handleFields = (fields) => {
+  //   const { createTime } = fields;
+  //   if (createTime.length) {
+  //     fields.createTime = [createTime[0].format('YYYY-MM-DD'), createTime[1].format('YYYY-MM-DD')]
+  //   }
+  //   return fields
+  // };
 
   const handleSubmit = () => {
     let fields = getFieldsValue();
-    fields = handleFields(fields);
+    //fields = handleFields(fields);
     onFilterChange(fields)
   };
 
@@ -68,7 +68,7 @@ const Filter = ({
     fields = handleFields(fields);
     onFilterChange(fields)
   };
-  const { name, address } = filter;
+  const { name, address ,deviceCDK} = filter;
 
   let initialCreateTime = [];
   if (filter.createTime && filter.createTime[0]) {
@@ -81,7 +81,7 @@ const Filter = ({
   return (
     <Row gutter={24}>
       <Col {...ColProps} xl={{ span: 4 }} md={{ span: 8 }}>
-        {getFieldDecorator('name', { initialValue: name })(<Search placeholder="Search Name" size="large" onSearch={handleSubmit} />)}
+        {getFieldDecorator('deviceCDK', { initialValue: deviceCDK })(<Search placeholder="Search SN码" size="large" onSearch={handleSubmit} />)}
       </Col>
 
       <Col {...TwoColProps} xl={{ span: 10 }} md={{ span: 24 }} sm={{ span: 24 }}>
