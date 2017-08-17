@@ -53,7 +53,6 @@ const fetch = (options) => {
     data = null
   }
 
-
   switch (method.toLowerCase()) {
     case 'get':
       return axios.get(url, {
@@ -62,11 +61,11 @@ const fetch = (options) => {
     case 'delete':
       return axios.delete(url);
     case 'post':
-      return axios.post(url, cloneData);
+      return axios.post(url, qs.stringify(cloneData));
     case 'put':
-      return axios.put(url, cloneData);
+      return axios.put(url, qs.stringify(cloneData));
     case 'patch':
-      return axios.patch(url, cloneData);
+      return axios.patch(url,qs.stringify(cloneData));
     default:
       return axios(options)
   }

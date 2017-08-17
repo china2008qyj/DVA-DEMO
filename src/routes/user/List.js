@@ -24,7 +24,7 @@ const List = ({ onDeleteItem, onEditItem, onRestart,isMotion, location, ...table
       confirm({
         title: '您确定要重启该设备么?',
         onOk(){
-          onRestart(record.id)
+          onRestart(record.deviceCDK)
         },
       })
     }
@@ -41,11 +41,11 @@ const List = ({ onDeleteItem, onEditItem, onRestart,isMotion, location, ...table
       dataIndex: 'familyID',
       key: 'familyID',
     }, {
-      title: '所在区域',
+      title: '所在位置',
       dataIndex: 'locationPetName',
       key: 'locationPetName',
     }, {
-      title: '所在位置',
+      title: '所在区域',
       dataIndex: 'locationPetName1',
       key: 'locationPetName1',
     }, {

@@ -29,8 +29,8 @@ export async function remove (params) {
 
 export async function restart(params) {
   return  request({
-    url:usersdetail,
-    method: 'get',
+    url:'http://42.159.247.58:3978/web/resetDevice/',
+    method: 'post',
     data: params,
   })
 }

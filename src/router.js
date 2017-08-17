@@ -43,7 +43,7 @@ const Routers = function ({ history, app }) {
             require.ensure([], require => {
               registerModel(app, require('./models/user/detail'));
               cb(null, require('./routes/user/detail/'))
-            }, 'user-detail')
+            }, 'user-channel')
           },
         }, {
           path: 'login',
@@ -90,18 +90,19 @@ const Routers = function ({ history, app }) {
             }, 'post')
           },
         },{
-          path: 'config/infrared',
+          path: 'config/tvbrand.js',
           getComponent (nextState, cb) {
             require.ensure([], require => {
-              cb(null, require('./routes/config/infrared/'))
-            }, 'config-infrared')
+              cb(null, require('./routes/config/tvbrand/'))
+            }, 'tvbrand.js')
           },
         },{
-          path: 'config/scene',
+          path: 'config/tvbrand.js/:id',
           getComponent (nextState, cb) {
             require.ensure([], require => {
-              cb(null, require('./routes/config/scene/'))
-            }, 'config-scene')
+              registerModel(app, require('./routes/config/tvbrand/channel'));
+              cb(null, require('./routes/config/tvbrand/channel'))
+            }, 'tvbrand_channel')
           },
         }, {
           path: '*',

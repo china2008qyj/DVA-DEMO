@@ -55,10 +55,6 @@ const Login = ({
           <Button type="primary" size="large" onClick={handleOk} loading={loginLoading}>
             登  录
           </Button>
-          <p>
-            <span>Username：guest</span>
-            <span>Password：guest</span>
-          </p>
         </Row>
 
       </form>

@@ -56,7 +56,7 @@ const modal = ({
             ],
           })(<Input />)}
         </FormItem>
-        <FormItem label="所在区域" hasFeedback {...formItemLayout}>
+        <FormItem label="所在位置" hasFeedback {...formItemLayout}>
           {getFieldDecorator('locationPetName', {
             initialValue: item.locationPetName,
             rules: [
@@ -66,7 +66,7 @@ const modal = ({
             ],
           })(<Input />)}
         </FormItem>
-        <FormItem label="所在位置" hasFeedback {...formItemLayout}>
+        <FormItem label="所在区域" hasFeedback {...formItemLayout}>
           {getFieldDecorator('nickName', {
             initialValue: item.nickName1,
             rules: [
