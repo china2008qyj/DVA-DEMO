@@ -7,33 +7,33 @@ import List from './List'
 import Filter from './Filter'
 import Modal from './Modal'
 
-const User = ({ location, dispatch, user, loading }) => {
-  const { list, pagination, currentItem, modalVisible, modalType, isMotion, selectedRowKeys } = user;
+const Tvbrand = ({ location, dispatch, tvbrand, loading }) => {
+  const { list, pagination, currentItem, modalVisible, modalType, isMotion, selectedRowKeys } = tvbrand;
   const { pageSize } = pagination;
 
   const modalProps = {
     item: modalType === 'create' ? {} : currentItem,
     visible: modalVisible,
     maskClosable: false,
-    confirmLoading: loading.effects['user/update'],
+    confirmLoading: loading.effects['tvbrand/update'],
     title: `${modalType === 'create' ? '添加新家庭' : '编辑家庭'}`,
     wrapClassName: 'vertical-center-modal',
     onOk (data) {
       dispatch({
-        type: `user/${modalType}`,
+        type: `tvbrand/${modalType}`,
         payload: data,
       })
     },
     onCancel () {
       dispatch({
-        type: 'user/hideModal',
+        type: 'tvbrand/hideModal',
       })
     },
   };
 
   const listProps = {
     dataSource: list,
-    loading: loading.effects['user/query'],
+    loading: loading.effects['tvbrand/query'],
     pagination,
     location,
     isMotion,
@@ -50,13 +50,13 @@ const User = ({ location, dispatch, user, loading }) => {
     },
     onDeleteItem (id) {
       dispatch({
-        type: 'user/delete',
+        type: 'tvbrand/delete',
         payload: id,
       })
     },
     onEditItem (item) {
       dispatch({
-        type: 'user/showModal',
+        type: 'tvbrand/showModal',
         payload: {
           modalType: 'update',
           currentItem: item,
@@ -67,7 +67,7 @@ const User = ({ location, dispatch, user, loading }) => {
       selectedRowKeys,
       onChange: (keys) => {
         dispatch({
-          type: 'user/updateState',
+          type: 'tvbrand/updateState',
           payload: {
             selectedRowKeys: keys,
           },
@@ -93,31 +93,31 @@ const User = ({ location, dispatch, user, loading }) => {
     },
     onSearch (fieldsValue) {
       fieldsValue.keyword.length ? dispatch(routerRedux.push({
-        pathname: '/user',
+        pathname: '/tvbrand',
         query: {
           field: fieldsValue.field,
           keyword: fieldsValue.keyword,
         },
       })) : dispatch(routerRedux.push({
-        pathname: '/user',
+        pathname: '/tvbrand',
       }))
     },
     onAdd () {
       dispatch({
-        type: 'user/showModal',
+        type: 'tvbrand/showModal',
         payload: {
           modalType: 'create',
         },
       })
     },
     switchIsMotion () {
-      dispatch({ type: 'user/switchIsMotion' })
+      dispatch({ type: 'tvbrand/switchIsMotion' })
     },
   };
 
   const handleDeleteItems = () => {
     dispatch({
-      type: 'user/multiDelete',
+      type: 'tvbrand/multiDelete',
       payload: {
         ids: selectedRowKeys,
       },
@@ -144,11 +144,11 @@ const User = ({ location, dispatch, user, loading }) => {
   )
 };
 
-User.propTypes = {
-  user: PropTypes.object,
+Tvbrand.propTypes = {
+  tvbrand: PropTypes.object,
   location: PropTypes.object,
   dispatch: PropTypes.func,
   loading: PropTypes.object,
 };
 
-export default connect(({ user, loading }) => ({ user, loading }))(User)
+export default connect(({ tvbrand, loading }) => ({ tvbrand, loading }))(Tvbrand)

@@ -2,11 +2,14 @@
   <dictionary name="user">
     <words>
       <w>bpid</w>
+      <w>cors</w>
       <w>currnt</w>
       <w>dcdk</w>
       <w>jsonp</w>
       <w>mpid</w>
       <w>tvbrand</w>
+      <w>tvbrands</w>
+      <w>tvchannels</w>
       <w>usersdetail</w>
     </words>
   </dictionary>

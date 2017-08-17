@@ -26,12 +26,12 @@ const List = ({ onDeleteItem, onEditItem, isMotion, location, ...tableProps }) =
   const columns = [
     {
       title: 'Name',
-      dataIndex: 'name',
+      dataIndex: 'id',
       key: 'name',
-      render: (text, record) => <Link to={`user/${record.id}`}>{text}</Link>,
+      render: (text, record) => <Link to={`tvbrand/${record.id}`}>{text}</Link>,
     },  {
       title: 'CreateTime',
-      dataIndex: 'createTime',
+      dataIndex: 'brandName',
       key: 'createTime',
     }, {
       title: 'Operation',

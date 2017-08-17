@@ -1,6 +1,6 @@
 import modelExtend from 'dva-model-extend'
-import { create, remove, update ,restart} from '../services/user'
-import * as usersService from '../services/users'
+import { create, remove, update ,restart} from '../services/channel'
+import * as usersService from '../services/tvbrand'
 import { pageModel } from './common'
 import { config } from 'utils'
 
@@ -8,7 +8,7 @@ const { query } = usersService;
 const { prefix } = config;
 
 export default modelExtend(pageModel, {
-  namespace: 'user',
+  namespace: 'tvbrand',
 
   state: {
     currentItem: {},
@@ -21,7 +21,7 @@ export default modelExtend(pageModel, {
   subscriptions: {
     setup ({ dispatch, history }) {
       history.listen(location => {
-        if (location.pathname === '/user') {
+        if (location.pathname === '/config/tvbrand') {
           dispatch({
             type: 'query',
             payload: location.query,
@@ -73,15 +73,15 @@ export default modelExtend(pageModel, {
       }
     },
 
-    *'multiDelete' ({ payload }, { call, put }) {
-      const data = yield call(usersService.remove, payload);
-      if (data.success) {
-        yield put({ type: 'updateState', payload: { selectedRowKeys: [] } });
-        yield put({ type: 'query' })
-      } else {
-        throw data
-      }
-    },
+    // *'multiDelete' ({ payload }, { call, put }) {
+    //   const data = yield call(usersService.remove, payload);
+    //   if (data.success) {
+    //     yield put({ type: 'updateState', payload: { selectedRowKeys: [] } });
+    //     yield put({ type: 'query' })
+    //   } else {
+    //     throw data
+    //   }
+    // },
 
     *create ({ payload }, { call, put }) {
       const data = yield call(create, payload);

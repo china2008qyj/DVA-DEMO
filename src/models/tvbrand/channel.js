@@ -3,7 +3,7 @@ import { query } from '../../services/user'
 
 export default {
 
-  namespace: 'userDetail',
+  namespace: 'channel',
 
   state: {
     data: {},
@@ -12,7 +12,7 @@ export default {
   subscriptions: {
     setup ({ dispatch, history }) {
       history.listen(() => {
-        const match = pathToRegexp('/user/:id').exec(location.pathname);
+        const match = pathToRegexp('/tvbrand/:id').exec(location.pathname);
         if (match) {
           dispatch({ type: 'query', payload: { id: match[1] } })
         }

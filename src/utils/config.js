@@ -1,6 +1,5 @@
 const APIV1 = '/api/v1';
 const APIV2 = '/api/v2';
-const APIV3 = 'http://42.159.247.58:3978';
 
 module.exports = {
   name: '管理后台',
@@ -25,6 +24,7 @@ module.exports = {
     menus: `${APIV1}/menus`,
     v1test: `${APIV1}/test`,
     v2test: `${APIV2}/test`,
-    v3test: `${APIV3}/web/getDeviceInfo`,
+    tvbrand: `http://42.159.247.58:4324/AppProcess/1.0/tvbrands`,
+    channel: `http://42.159.247.58:4324/AppProcess/1.0/tvbrands/:id/tvchannels`,
   },
 };

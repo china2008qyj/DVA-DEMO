@@ -90,14 +90,14 @@ const Routers = function ({ history, app }) {
             }, 'post')
           },
         },{
-          path: 'config/tvbrand.js',
+          path: 'config/tvbrand',
           getComponent (nextState, cb) {
             require.ensure([], require => {
               cb(null, require('./routes/config/tvbrand/'))
             }, 'tvbrand.js')
           },
         },{
-          path: 'config/tvbrand.js/:id',
+          path: 'config/tvbrand/:id',
           getComponent (nextState, cb) {
             require.ensure([], require => {
               registerModel(app, require('./routes/config/tvbrand/channel'));
