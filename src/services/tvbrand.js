@@ -17,3 +17,19 @@ export async function remove (params) {
     data: params,
   })
 }
+
+export async function create (params) {
+  return request({
+    url: tvbrand,
+    method: 'post',
+    data: params,
+  })
+}
+
+export async function update (params) {
+  return request({
+    url: tvbrand,
+    method: 'delete',
+    data: params,
+  })
+}

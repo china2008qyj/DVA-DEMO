@@ -15,7 +15,7 @@ const List = ({ onDeleteItem, onEditItem, onRestart,isMotion, location, ...table
       onEditItem(record)
     } else if (e.key === '2') {
       confirm({
-        title: '您确定要删除这条记录吗?',
+        title: '您确定要删除该设备吗?',
         onOk () {
           onDeleteItem(record.id)
         },

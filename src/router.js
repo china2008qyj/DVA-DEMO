@@ -93,18 +93,21 @@ const Routers = function ({ history, app }) {
           path: 'config/tvbrand',
           getComponent (nextState, cb) {
             require.ensure([], require => {
+              registerModel(app, require('./models/tvbrand'));
               cb(null, require('./routes/config/tvbrand/'))
-            }, 'tvbrand.js')
+            }, 'tvbrand')
           },
-        },{
-          path: 'config/tvbrand/:id',
-          getComponent (nextState, cb) {
-            require.ensure([], require => {
-              registerModel(app, require('./routes/config/tvbrand/channel'));
-              cb(null, require('./routes/config/tvbrand/channel'))
-            }, 'tvbrand_channel')
-          },
-        }, {
+        },
+        // {
+        //   path: 'config/tvbrand/:id',
+        //   getComponent (nextState, cb) {
+        //     require.ensure([], require => {
+        //       registerModel(app, require('./routes/config/tvbrand/channel'));
+        //       cb(null, require('./routes/config/tvbrand/channels'))
+        //     }, 'tvbrandchannel')
+        //   },
+        // },
+        {
           path: '*',
           getComponent (nextState, cb) {
             require.ensure([], require => {

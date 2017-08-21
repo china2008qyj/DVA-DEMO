@@ -9,13 +9,13 @@ import { Link } from 'dva/router'
 
 const confirm = Modal.confirm;
 
-const List = ({ onDeleteItem, onEditItem, isMotion, location, ...tableProps }) => {
+const List = ({ onDeleteItem, onEditItem,isMotion, location, ...tableProps }) => {
   const handleMenuClick = (record, e) => {
     if (e.key === '1') {
       onEditItem(record)
     } else if (e.key === '2') {
       confirm({
-        title: '您确定要删除这条记录吗?',
+        title: '您确定要删除该电视品牌吗?',
         onOk () {
           onDeleteItem(record.id)
         },
@@ -25,20 +25,24 @@ const List = ({ onDeleteItem, onEditItem, isMotion, location, ...tableProps }) =
 
   const columns = [
     {
-      title: 'Name',
+      title: '品牌ID',
       dataIndex: 'id',
-      key: 'name',
+      key: 'id',
       render: (text, record) => <Link to={`tvbrand/${record.id}`}>{text}</Link>,
-    },  {
-      title: 'CreateTime',
+    }, {
+      title: '家电品牌',
       dataIndex: 'brandName',
-      key: 'createTime',
+      key: 'brandName',
+    }, {
+      title: '未知字段',
+      dataIndex: 'bid',
+      key: 'bid',
     }, {
       title: 'Operation',
       key: 'operation',
       width: 100,
       render: (text, record) => {
-        return <DropOption onMenuClick={e => handleMenuClick(record, e)} menuOptions={[{ key: '1', name: '编辑' }, { key: '2', name: '删除' }]} />
+        return <DropOption  onMenuClick={e => handleMenuClick(record, e)}  menuOptions={[{ key: '1', name: '编   辑' }, { key: '2', name: '删   除' }]} />
       },
     },
   ];
@@ -69,6 +73,7 @@ const List = ({ onDeleteItem, onEditItem, isMotion, location, ...tableProps }) =
 List.propTypes = {
   onDeleteItem: PropTypes.func,
   onEditItem: PropTypes.func,
+  onRestart: PropTypes.func,
   isMotion: PropTypes.bool,
   location: PropTypes.object,
 };

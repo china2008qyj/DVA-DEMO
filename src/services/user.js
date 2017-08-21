@@ -2,7 +2,6 @@ import { request, config } from 'utils'
 const { api } = config;
 const { user } = api;
 const {usersdetail} =api;
-const { users } = api;
 export async function query (params) {
   return request({
     url: usersdetail,

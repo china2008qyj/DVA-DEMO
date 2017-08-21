@@ -16,7 +16,7 @@ const Tvbrand = ({ location, dispatch, tvbrand, loading }) => {
     visible: modalVisible,
     maskClosable: false,
     confirmLoading: loading.effects['tvbrand/update'],
-    title: `${modalType === 'create' ? '添加新家庭' : '编辑家庭'}`,
+    title: `${modalType === 'create' ? '添加新的电视品牌' : '编辑电视品牌'}`,
     wrapClassName: 'vertical-center-modal',
     onOk (data) {
       dispatch({
@@ -51,6 +51,12 @@ const Tvbrand = ({ location, dispatch, tvbrand, loading }) => {
     onDeleteItem (id) {
       dispatch({
         type: 'tvbrand/delete',
+        payload: id,
+      })
+    },
+    onRestart(id){
+      dispatch({
+        type: 'tvbrand/restart',
         payload: id,
       })
     },
@@ -132,7 +138,7 @@ const Tvbrand = ({ location, dispatch, tvbrand, loading }) => {
            <Row style={{ marginBottom: 24, textAlign: 'right', fontSize: 13 }}>
              <Col>
                {`Selected ${selectedRowKeys.length} items `}
-               <Popconfirm title={'Are you sure delete these items?'} placement="left" onConfirm={handleDeleteItems}>
+               <Popconfirm title={'您确定要删除这些记录吗?'} placement="left" onConfirm={handleDeleteItems}>
                  <Button type="primary" size="large" style={{ marginLeft: 8 }}>Remove</Button>
                </Popconfirm>
              </Col>

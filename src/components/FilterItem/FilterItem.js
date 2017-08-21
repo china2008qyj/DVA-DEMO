@@ -6,7 +6,7 @@ const FilterItem = ({
   label = '',
   children,
 }) => {
-  const labelArray = label.split('')
+  const labelArray = label.split('');
   return (
     <div className={styles.filterItem}>
       {labelArray.length > 0
