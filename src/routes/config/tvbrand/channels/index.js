@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'dva'
 import styles from './index.less'
 
-const Detail = ({ userDetail }) => {
+const Channel = ({ userDetail }) => {
   const { data } = userDetail;
   const content = [];
   for (let key in data) {
@@ -21,9 +21,9 @@ const Detail = ({ userDetail }) => {
   </div>)
 };
 
-Detail.propTypes = {
+Channel.propTypes = {
   userDetail: PropTypes.object,
   loading: PropTypes.bool,
 };
 
-export default connect(({ userDetail, loading }) => ({ userDetail, loading: loading.models.userDetail }))(Detail)
+export default connect(({ channels, loading }) => ({ channels, loading: loading.models.userDetail }))(Channel)

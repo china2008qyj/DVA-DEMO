@@ -1,9 +1,9 @@
 import pathToRegexp from 'path-to-regexp'
-import { query } from '../../services/user'
+import { query } from '../services/channel'
 
 export default {
 
-  namespace: 'channel',
+  namespace: 'channels',
 
   state: {
     data: {},
@@ -12,7 +12,7 @@ export default {
   subscriptions: {
     setup ({ dispatch, history }) {
       history.listen(() => {
-        const match = pathToRegexp('/tvbrand/:id').exec(location.pathname);
+        const match = pathToRegexp('config/tvbrand/:id').exec(location.pathname);
         if (match) {
           dispatch({ type: 'query', payload: { id: match[1] } })
         }
@@ -21,9 +21,8 @@ export default {
   },
 
   effects: {
-    *query ({
-              payload,
-            }, { call, put }) {
+    *query ({payload}, { call, put }) {
+      console.log("1111111111111111111111111111");
       const data = yield call(query, payload);
       const { success, message, status, ...other } = data;
       if (success) {

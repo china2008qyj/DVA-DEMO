@@ -33,7 +33,7 @@ const modal = ({
         ...getFieldsValue(),
         key: item.key,
       };
-      data.address = data.address.join(' ');
+      data.address = data.address.join('');
       onOk(data)
     })
   };

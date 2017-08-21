@@ -37,12 +37,13 @@ const List = ({ onDeleteItem, onEditItem,isMotion, location, ...tableProps }) =>
       title: '未知字段',
       dataIndex: 'bid',
       key: 'bid',
+      render: (text, record) => <Link to={`tvbrand/${record.id}`}>频道管理</Link>,
     }, {
       title: 'Operation',
       key: 'operation',
       width: 100,
       render: (text, record) => {
-        return <DropOption  onMenuClick={e => handleMenuClick(record, e)}  menuOptions={[{ key: '1', name: '编   辑' }, { key: '2', name: '删   除' }]} />
+        return <DropOption  onMenuClick={e => handleMenuClick(record, e)}  menuOptions={[{ key: '1', name: '编   辑'}, { key: '2', name: '删   除'}]} />
       },
     },
   ];
