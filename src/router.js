@@ -81,14 +81,6 @@ const Routers = function ({ history, app }) {
               cb(null, require('./routes/chart/areaChart/'))
             }, 'chart-areaChart')
           },
-        }, {
-          path: 'post',
-          getComponent (nextState, cb) {
-            require.ensure([], require => {
-              registerModel(app, require('./models/post'));
-              cb(null, require('./routes/post/'))
-            }, 'post')
-          },
         },{
           path: 'config/tvbrand',
           getComponent (nextState, cb) {
@@ -104,6 +96,15 @@ const Routers = function ({ history, app }) {
             require.ensure([], require => {
               registerModel(app, require('./models/channels'));
               cb(null, require('./routes/config/tvbrand/channels'))
+            }, 'tvbrandchannel')
+          },
+        },
+        {
+          path: 'log',
+          getComponent (nextState, cb) {
+            require.ensure([], require => {
+              registerModel(app, require('./models/log'));
+              cb(null, require('./routes/long_range/log'))
             }, 'tvbrandchannel')
           },
         },
