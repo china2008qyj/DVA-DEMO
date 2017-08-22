@@ -9,63 +9,29 @@ import { Link } from 'dva/router'
 
 const confirm = Modal.confirm;
 
-const List = ({ onDeleteItem, onEditItem, onRestart,isMotion, location, ...tableProps }) => {
-  const handleMenuClick = (record, e) => {
-    if (e.key === '1') {
-      onEditItem(record)
-    } else if (e.key === '2') {
-      confirm({
-        title: '您确定要删除该设备吗?',
-        onOk () {
-          onDeleteItem(record.id)
-        },
-      })
-    }else if(e.key === '3'){
-      confirm({
-        title: '您确定要重启该设备么?',
-        onOk(){
-          onRestart(record.deviceCDK)
-        },
-      })
-    }
-  };
-
+const List = ({isMotion, location, ...tableProps }) => {
   const columns = [
     {
-      title: '设备SN码',
+      title: '日志文件名',
       dataIndex: 'deviceCDK',
       key: 'deviceCDK',
       render: (text, record) => <Link to={`user/${record.id}`}>{text}</Link>,
     }, {
-      title: '家庭名称',
+      title: '所属设备ID',
       dataIndex: 'familyID',
       key: 'familyID',
     }, {
-      title: '所在位置',
+      title: '所属家庭',
       dataIndex: 'locationPetName',
       key: 'locationPetName',
     }, {
-      title: '所在区域',
+      title: '位置',
       dataIndex: 'locationPetName1',
       key: 'locationPetName1',
     }, {
-      title: '设备IP',
+      title: '文件下载',
       dataIndex: 'ip',
       key: 'ip',
-    }, {
-      title: '设备类型',
-      dataIndex: 'type',
-      key: 'type',
-      render: (text) => <span>{text
-        ? '墙面机'
-        : '其他'}</span>,
-    }, {
-      title: 'Operation',
-      key: 'operation',
-      width: 100,
-      render: (text, record) => {
-        return <DropOption  onMenuClick={e => handleMenuClick(record, e)}  menuOptions={[{ key: '1', name: '编   辑' }, { key: '2', name: '删   除' } ,{key:'3' ,name:'重   启'},{key:'4' ,name:'升   级'}]} />
-      },
     },
   ];
 

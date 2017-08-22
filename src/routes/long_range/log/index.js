@@ -7,33 +7,33 @@ import List from './List'
 import Filter from './Filter'
 import Modal from './Modal'
 
-const User = ({ location, dispatch, user, loading }) => {
-  const { list, pagination, currentItem, modalVisible, modalType, isMotion, selectedRowKeys } = user;
+const Log = ({ location, dispatch, log, loading }) => {
+  const { list, pagination, currentItem, modalVisible, modalType, isMotion, selectedRowKeys } =log;
   const { pageSize } = pagination;
 
   const modalProps = {
     item: modalType === 'create' ? {} : currentItem,
     visible: modalVisible,
     maskClosable: false,
-    confirmLoading: loading.effects['user/update'],
+    confirmLoading: loading.effects['log/update'],
     title: `${modalType === 'create' ? '添加新家庭' : '编辑设备信息'}`,
     wrapClassName: 'vertical-center-modal',
     onOk (data) {
       dispatch({
-        type: `user/${modalType}`,
+        type: `log/${modalType}`,
         payload: data,
       })
     },
     onCancel () {
       dispatch({
-        type: 'user/hideModal',
+        type: 'log/hideModal',
       })
     },
   };
 
   const listProps = {
     dataSource: list,
-    loading: loading.effects['user/query'],
+    loading: loading.effects['log/query'],
     pagination,
     location,
     isMotion,
@@ -48,32 +48,11 @@ const User = ({ location, dispatch, user, loading }) => {
         },
       }))
     },
-    onDeleteItem (id) {
-      dispatch({
-        type: 'user/delete',
-        payload: id,
-      })
-    },
-    onRestart(id){
-      dispatch({
-        type: 'user/restart',
-        payload: id,
-      })
-    },
-    onEditItem (item) {
-      dispatch({
-        type: 'user/showModal',
-        payload: {
-          modalType: 'update',
-          currentItem: item,
-        },
-      })
-    },
     rowSelection: {
       selectedRowKeys,
       onChange: (keys) => {
         dispatch({
-          type: 'user/updateState',
+          type: 'log/updateState',
           payload: {
             selectedRowKeys: keys,
           },
@@ -99,31 +78,23 @@ const User = ({ location, dispatch, user, loading }) => {
     },
     onSearch (fieldsValue) {
       fieldsValue.keyword.length ? dispatch(routerRedux.push({
-        pathname: '/user',
+        pathname: '/log',
         query: {
           field: fieldsValue.field,
           keyword: fieldsValue.keyword,
         },
       })) : dispatch(routerRedux.push({
-        pathname: '/user',
+        pathname: '/log',
       }))
     },
-    onAdd () {
-      dispatch({
-        type: 'user/showModal',
-        payload: {
-          modalType: 'create',
-        },
-      })
-    },
     switchIsMotion () {
-      dispatch({ type: 'user/switchIsMotion' })
+      dispatch({ type: 'log/switchIsMotion' })
     },
   };
 
   const handleDeleteItems = () => {
     dispatch({
-      type: 'user/multiDelete',
+      type: 'log/multiDelete',
       payload: {
         ids: selectedRowKeys,
       },
@@ -133,28 +104,28 @@ const User = ({ location, dispatch, user, loading }) => {
   return (
     <div className="content-inner">
       <Filter {...filterProps} />
-      {
-         selectedRowKeys.length > 0 &&
-           <Row style={{ marginBottom: 24, textAlign: 'right', fontSize: 13 }}>
-             <Col>
-               {`Selected ${selectedRowKeys.length} items `}
-               <Popconfirm title={'您确定要删除这些记录吗?'} placement="left" onConfirm={handleDeleteItems}>
-                 <Button type="primary" size="large" style={{ marginLeft: 8 }}>Remove</Button>
-               </Popconfirm>
-             </Col>
-           </Row>
-      }
+      {/*{*/}
+         {/*selectedRowKeys.length > 0 &&*/}
+           {/*<Row style={{ marginBottom: 24, textAlign: 'right', fontSize: 13 }}>*/}
+             {/*<Col>*/}
+               {/*{`Selected ${selectedRowKeys.length} items `}*/}
+               {/*<Popconfirm title={'您确定要删除这些记录吗?'} placement="left" onConfirm={handleDeleteItems}>*/}
+                 {/*<Button type="primary" size="large" style={{ marginLeft: 8 }}>Remove</Button>*/}
+               {/*</Popconfirm>*/}
+             {/*</Col>*/}
+           {/*</Row>*/}
+      {/*}*/}
       <List {...listProps} />
       {modalVisible && <Modal {...modalProps} />}
     </div>
   )
 };
 
-User.propTypes = {
-  user: PropTypes.object,
+Log.propTypes = {
+  log: PropTypes.object,
   location: PropTypes.object,
   dispatch: PropTypes.func,
   loading: PropTypes.object,
 };
 
-export default connect(({ user, loading }) => ({ user, loading }))(User)
+export default connect(({ log, loading }) => ({ log, loading }))(Log)
