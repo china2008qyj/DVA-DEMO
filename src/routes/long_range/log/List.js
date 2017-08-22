@@ -13,25 +13,29 @@ const List = ({isMotion, location, ...tableProps }) => {
   const columns = [
     {
       title: '日志文件名',
+      dataIndex: 'logname',
+      key: 'logname',
+    },{
+      title: '所属设备ID',
       dataIndex: 'deviceCDK',
       key: 'deviceCDK',
-      render: (text, record) => <Link to={`user/${record.id}`}>{text}</Link>,
-    }, {
-      title: '所属设备ID',
-      dataIndex: 'familyID',
-      key: 'familyID',
-    }, {
+    },{
       title: '所属家庭',
+      dataIndex: 'fname',
+      key: 'fname',
+    },{
+      title: '位置',
       dataIndex: 'locationPetName',
       key: 'locationPetName',
-    }, {
-      title: '位置',
-      dataIndex: 'locationPetName1',
-      key: 'locationPetName1',
-    }, {
+    },{
+      title: '时间',
+      dataIndex: 'createtime',
+      key: 'createtime',
+    },{
       title: '文件下载',
-      dataIndex: 'ip',
-      key: 'ip',
+      dataIndex: 'url',
+      key: 'url',
+      render: (url, record) => <a href={url} target="_blank">点击下载Blob文件</a>,
     },
   ];
 

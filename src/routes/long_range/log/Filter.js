@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import { FilterItem } from 'components'
-import { Form, Button, Row, Col, DatePicker, Input, Cascader, Switch } from 'antd'
-import city from '../../../utils/city'
+import { Form, Button, Row, Col, DatePicker, Input} from 'antd'
 
 const Search = Input.Search;
 const { RangePicker } = DatePicker;
@@ -33,13 +32,13 @@ const Filter = ({
     setFieldsValue,
   },
 }) => {
-  // const handleFields = (fields) => {
-  //   const { createTime } = fields;
-  //   if (createTime.length) {
-  //     fields.createTime = [createTime[0].format('YYYY-MM-DD'), createTime[1].format('YYYY-MM-DD')]
-  //   }
-  //   return fields
-  // };
+  const handleFields = (fields) => {
+    const { createTime } = fields;
+    if (createTime.length) {
+      fields.createTime = [createTime[0].format('X'), createTime[1].format('X')]
+    }
+    return fields
+  };
 
   const handleSubmit = () => {
     let fields = getFieldsValue();
@@ -68,7 +67,7 @@ const Filter = ({
     fields = handleFields(fields);
     onFilterChange(fields)
   };
-  const { name, address ,deviceCDK} = filter;
+  const { fname,dcdk} = filter;
 
   let initialCreateTime = [];
   if (filter.createTime && filter.createTime[0]) {
@@ -81,7 +80,19 @@ const Filter = ({
   return (
     <Row gutter={24}>
       <Col {...ColProps} xl={{ span: 4 }} md={{ span: 8 }}>
-        {getFieldDecorator('deviceCDK', { initialValue: deviceCDK })(<Search placeholder="Search 家庭" size="large" onSearch={handleSubmit} />)}
+        {getFieldDecorator('dcdk', { initialValue: dcdk })(<Search placeholder="Search ID" size="large" onSearch={handleSubmit} />)}
+      </Col>
+
+      <Col {...ColProps} xl={{ span: 4 }} md={{ span: 8 }}>
+        {getFieldDecorator('fname', { initialValue: fname })(<Search placeholder="Search 家庭" size="large" onSearch={handleSubmit} />)}
+      </Col>
+
+      <Col {...ColProps} xl={{ span: 6 }} md={{ span: 8 }} sm={{ span: 12 }}>
+        <FilterItem label="Createtime">
+          {getFieldDecorator('createTime', { initialValue: initialCreateTime })(
+            <RangePicker style={{ width: '100%' }} size="large" onChange={handleChange.bind(null, 'createTime')} />
+          )}
+        </FilterItem>
       </Col>
 
       <Col {...TwoColProps} xl={{ span: 10 }} md={{ span: 24 }} sm={{ span: 24 }}>
