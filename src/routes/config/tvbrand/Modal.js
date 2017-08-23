@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Form, Input, InputNumber, Radio, Modal, Cascader } from 'antd'
-import city from '../../../utils/city'
+import { Form, Input, Modal} from 'antd'
 
 const FormItem = Form.Item;
 
@@ -33,7 +32,7 @@ const modal = ({
         ...getFieldsValue(),
         key: item.key,
       };
-      data.address = data.address.join(' ');
+      //data.address = data.address.join(' ');
       onOk(data)
     })
   };
@@ -61,11 +60,11 @@ const modal = ({
   )
 };
 
-modal.propTypes = {
-  form: PropTypes.object.isRequired,
-  type: PropTypes.string,
-  item: PropTypes.object,
-  onOk: PropTypes.func,
-};
+// modal.propTypes = {
+//   form: PropTypes.object.isRequired,
+//   type: PropTypes.string,
+//   item: PropTypes.object,
+//   onOk: PropTypes.func,
+// };
 
 export default Form.create()(modal)

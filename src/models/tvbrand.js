@@ -44,30 +44,15 @@ export default modelExtend(pageModel, {
       }
     },
 
-    *delete ({ payload }, { call, put, select }) {
-      const data = yield call(remove, { id: payload });
-      const { selectedRowKeys } = yield select(_ => _.user);
-      if (data.success) {
-        yield put({ type: 'updateState', payload: { selectedRowKeys: selectedRowKeys.filter(_ => _ !== payload) } });
-        yield put({ type: 'query' })
-      } else {
-        throw data
-      }
-    },
-
-    *restart ({ payload }, { call, put, select }) {
+    *delete ({ payload }, { call, put }) {
       console.log(payload);
-      console.log(data);
-      const data = yield call(restart, { dcdk: payload });
-      const { selectedRowKeys } = yield select(_ => _.user);
+      const data = yield call(remove, { id: payload });
       if (data.success) {
-        yield put({ type: 'updateState', payload: { selectedRowKeys: selectedRowKeys.filter(_ => _ !== payload) } });
         yield put({ type: 'query' })
       } else {
         throw data
       }
     },
-
     *'multiDelete' ({ payload }, { call, put }) {
       const data = yield call(usersService.remove, payload);
       if (data.success) {
@@ -79,6 +64,7 @@ export default modelExtend(pageModel, {
     },
 
     *create ({ payload }, { call, put }) {
+      console.log(payload);
       const data = yield call(create, payload);
       if (data.success) {
         yield put({ type: 'hideModal' });
@@ -89,9 +75,10 @@ export default modelExtend(pageModel, {
     },
 
     *update ({ payload }, { select, call, put }) {
-      const id = yield select(({ user }) => user.currentItem.id);
-      const newUser = { ...payload, id };
-      const data = yield call(update, newUser);
+      const id = yield select(({ tvbrand }) => tvbrand.currentItem.id);
+      console.log(id);
+      const newtvbrand = { ...payload, id };
+      const data = yield call(update, newtvbrand);
       if (data.success) {
         yield put({ type: 'hideModal' });
         yield put({ type: 'query' })

@@ -54,10 +54,12 @@ const Tvbrand = ({ location, dispatch, tvbrand, loading }) => {
         payload: id,
       })
     },
-    onRestart(id){
+    onAdd () {
       dispatch({
-        type: 'tvbrand/restart',
-        payload: id,
+        type: 'tvbrand/showModal',
+        payload: {
+          modalType: 'create',
+        },
       })
     },
     onEditItem (item) {
@@ -133,28 +135,28 @@ const Tvbrand = ({ location, dispatch, tvbrand, loading }) => {
   return (
     <div className="content-inner">
       <Filter {...filterProps} />
-      {
-         selectedRowKeys.length > 0 &&
-           <Row style={{ marginBottom: 24, textAlign: 'right', fontSize: 13 }}>
-             <Col>
-               {`Selected ${selectedRowKeys.length} items `}
-               <Popconfirm title={'您确定要删除这些记录吗?'} placement="left" onConfirm={handleDeleteItems}>
-                 <Button type="primary" size="large" style={{ marginLeft: 8 }}>Remove</Button>
-               </Popconfirm>
-             </Col>
-           </Row>
-      }
+      {/*{*/}
+         {/*selectedRowKeys.length > 0 &&*/}
+           {/*<Row style={{ marginBottom: 24, textAlign: 'right', fontSize: 13 }}>*/}
+             {/*<Col>*/}
+               {/*{`Selected ${selectedRowKeys.length} items `}*/}
+               {/*<Popconfirm title={'您确定要删除这些记录吗?'} placement="left" onConfirm={handleDeleteItems}>*/}
+                 {/*<Button type="primary" size="large" style={{ marginLeft: 8 }}>Remove</Button>*/}
+               {/*</Popconfirm>*/}
+             {/*</Col>*/}
+           {/*</Row>*/}
+      {/*}*/}
       <List {...listProps} />
       {modalVisible && <Modal {...modalProps} />}
     </div>
   )
 };
 
-Tvbrand.propTypes = {
-  tvbrand: PropTypes.object,
-  location: PropTypes.object,
-  dispatch: PropTypes.func,
-  loading: PropTypes.object,
-};
+// Tvbrand.propTypes = {
+//   tvbrand: PropTypes.object,
+//   location: PropTypes.object,
+//   dispatch: PropTypes.func,
+//   loading: PropTypes.object,
+// };
 
 export default connect(({ tvbrand, loading }) => ({ tvbrand, loading }))(Tvbrand)

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="759aed6e-2ed2-4cc4-b206-e61e4b82bdc9" name="默认的" comment="LOG">
+    <list default="true" id="759aed6e-2ed2-4cc4-b206-e61e4b82bdc9" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/user.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/user.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/long_range/log/Filter.js" afterPath="$PROJECT_DIR$/routes/long_range/log/Filter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/long_range/log/List.js" afterPath="$PROJECT_DIR$/routes/long_range/log/List.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/long_range/log/List.less" afterPath="$PROJECT_DIR$/routes/long_range/log/List.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/request.js" afterPath="$PROJECT_DIR$/utils/request.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/tvbrand.js" afterPath="$PROJECT_DIR$/models/tvbrand.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/config/tvbrand/Filter.js" afterPath="$PROJECT_DIR$/routes/config/tvbrand/Filter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/config/tvbrand/List.js" afterPath="$PROJECT_DIR$/routes/config/tvbrand/List.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/config/tvbrand/Modal.js" afterPath="$PROJECT_DIR$/routes/config/tvbrand/Modal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/config/tvbrand/index.js" afterPath="$PROJECT_DIR$/routes/config/tvbrand/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/tvbrand.js" afterPath="$PROJECT_DIR$/services/tvbrand.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/config.js" afterPath="$PROJECT_DIR$/utils/config.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,21 +27,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/index.js">
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="102" column="8" lean-forward="false" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="297">
+              <caret line="53" column="46" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Filter.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/long_range/log/Filter.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="67" column="26" lean-forward="true" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+            <state relative-caret-position="333">
+              <caret line="154" column="24" lean-forward="true" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -46,12 +51,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/user/index.js">
+      <file leaf-file-name="tvbrand.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/tvbrand.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-234">
-              <caret line="89" column="4" lean-forward="false" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
+            <state relative-caret-position="594">
+              <caret line="91" column="13" lean-forward="true" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Modal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/Modal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="65" column="28" lean-forward="true" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="List.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/List.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="List.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/List.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="3" selection-end-line="78" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,8 +100,8 @@
       <file leaf-file-name="Filter.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/Filter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="99" column="2" lean-forward="false" selection-start-line="99" selection-start-column="2" selection-end-line="99" selection-end-column="2" />
+            <state relative-caret-position="306">
+              <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="3" selection-end-line="100" selection-end-column="5" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -68,70 +109,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="request.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/request.js">
+      <file leaf-file-name="tvbrand.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/tvbrand.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-936">
-              <caret line="67" column="12" lean-forward="true" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../node_modules/qs/lib/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-108">
+              <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/long_range/log/index.js">
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="78" column="10" lean-forward="false" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="List.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/user/List.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="47" column="20" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="20" />
+            <state relative-caret-position="567">
+              <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="List.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/long_range/log/List.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Search.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/Search/Search.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -140,9 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>axios</find>
-      <find>defa</find>
-      <find>ajax</find>
       <find>consol</find>
       <find>console</find>
       <find>payload</find>
@@ -162,7 +152,6 @@
       <find>list</find>
       <find>item</find>
       <find>Total</find>
-      <find>user</find>
       <find>in</find>
       <find>form</find>
       <find>name</find>
@@ -170,6 +159,10 @@
       <find>onsearc</find>
       <find>fields</find>
       <find>format</find>
+      <find>current</find>
+      <find>currentitem</find>
+      <find>user</find>
+      <find>吴彦祖</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -178,8 +171,8 @@
       <dir>E:\dva\c-dva\antd-admin-master\src\components\DataTable</dir>
       <dir>E:\dva\c-dva\antd-admin-master\src\routes\config\infrared</dir>
       <dir>E:\dva\c-dva\antd-admin-master\src\routes\user</dir>
-      <dir>E:\dva\c-dva\antd-admin-master\src\routes\config\tvbrand</dir>
       <dir>E:\dva\c-dva\antd-admin-master\src\routes\config</dir>
+      <dir>E:\dva\c-dva\antd-admin-master\src\routes\config\tvbrand</dir>
       <dir>E:\dva\c-dva\antd-admin-master\src</dir>
     </dirStrings>
   </component>
@@ -213,29 +206,22 @@
         <option value="$PROJECT_DIR$/routes/config/tvbrand/channel/index.js" />
         <option value="$PROJECT_DIR$/models/app.js" />
         <option value="$PROJECT_DIR$/models/tvbrand/channel.js" />
-        <option value="$PROJECT_DIR$/services/tvbrand.js" />
         <option value="$PROJECT_DIR$/routes/user/detail/index.js" />
         <option value="$PROJECT_DIR$/routes/user/List.js" />
         <option value="$PROJECT_DIR$/components/FilterItem/FilterItem.js" />
         <option value="$PROJECT_DIR$/services/users.js" />
         <option value="$PROJECT_DIR$/routes/user/index.js" />
         <option value="$PROJECT_DIR$/services/user.js" />
-        <option value="$PROJECT_DIR$/models/tvbrand.js" />
         <option value="$PROJECT_DIR$/routes/config/tvbrand/List.less" />
         <option value="$PROJECT_DIR$/models/common.js" />
-        <option value="$PROJECT_DIR$/routes/config/tvbrand/Filter.js" />
-        <option value="$PROJECT_DIR$/routes/config/tvbrand/Modal.js" />
-        <option value="$PROJECT_DIR$/routes/config/tvbrand/index.js" />
         <option value="$PROJECT_DIR$/models/tvbrand/channels.js" />
         <option value="$PROJECT_DIR$/models/channels.js" />
         <option value="$PROJECT_DIR$/routes/config/tvbrand/channels/index.js" />
-        <option value="$PROJECT_DIR$/routes/config/tvbrand/List.js" />
         <option value="$PROJECT_DIR$/routes/user/Modal.js" />
         <option value="$PROJECT_DIR$/services/app.js" />
         <option value="$PROJECT_DIR$/mock/menu.js" />
         <option value="$PROJECT_DIR$/router.js" />
         <option value="$PROJECT_DIR$/routes/long_range/log/Modal.js" />
-        <option value="$PROJECT_DIR$/utils/config.js" />
         <option value="$PROJECT_DIR$/models/log.js" />
         <option value="$PROJECT_DIR$/routes/long_range/log/index.js" />
         <option value="$PROJECT_DIR$/services/log.js" />
@@ -243,6 +229,13 @@
         <option value="$PROJECT_DIR$/routes/long_range/log/List.js" />
         <option value="$PROJECT_DIR$/routes/long_range/log/Filter.js" />
         <option value="$PROJECT_DIR$/utils/request.js" />
+        <option value="$PROJECT_DIR$/utils/config.js" />
+        <option value="$PROJECT_DIR$/routes/config/tvbrand/index.js" />
+        <option value="$PROJECT_DIR$/routes/config/tvbrand/Filter.js" />
+        <option value="$PROJECT_DIR$/routes/config/tvbrand/List.js" />
+        <option value="$PROJECT_DIR$/routes/config/tvbrand/Modal.js" />
+        <option value="$PROJECT_DIR$/services/tvbrand.js" />
+        <option value="$PROJECT_DIR$/models/tvbrand.js" />
       </list>
     </option>
   </component>
@@ -307,22 +300,6 @@
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Search" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="mock" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -356,32 +333,6 @@
               <item name="config" type="462c0819:PsiDirectoryNode" />
               <item name="tvbrand" type="462c0819:PsiDirectoryNode" />
               <item name="channels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="long_range" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="long_range" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="detail" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
@@ -455,7 +406,7 @@
       <workItem from="1502182656944" duration="48547000" />
       <workItem from="1502851442115" duration="918000" />
       <workItem from="1502852748095" duration="62799000" />
-      <workItem from="1503280957317" duration="54102000" />
+      <workItem from="1503280957317" duration="67974000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1501155233339</created>
@@ -527,11 +478,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503382697827</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="LOG">
+      <created>1503397996420</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1503397996420</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="323362000" />
+    <option name="totallyTimeSpent" value="337234000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -545,7 +503,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="消息" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.171926" sideWeight="0.49789253" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.171926" sideWeight="0.49789253" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12908325" sideWeight="0.5064935" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -629,16 +587,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/request/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4851">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/post/List.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -692,16 +640,6 @@
         <state relative-caret-position="-180">
           <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/Modal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="53" column="31" lean-forward="true" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -775,14 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/tvbrand.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -841,16 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/tvbrand.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/DropOption/DropOption.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -867,20 +787,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/long_range/log/Modal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -917,34 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/List.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="44" column="33" lean-forward="true" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-729">
-          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/List.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/log.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -963,16 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="91" column="29" lean-forward="true" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/user/Filter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -981,32 +855,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/Filter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="99" column="2" lean-forward="false" selection-start-line="99" selection-start-column="2" selection-end-line="99" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/Search/Search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/long_range/log/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="78" column="10" lean-forward="false" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1065,10 +919,112 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/long_range/log/List.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        <state relative-caret-position="972">
+          <caret line="37" column="65" lean-forward="false" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/long_range/log/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-460">
+          <caret line="78" column="10" lean-forward="false" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/List.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="53" column="46" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../node_modules/prop-types/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="154" column="24" lean-forward="true" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/Filter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="3" selection-end-line="100" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/List.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="3" selection-end-line="78" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/config/tvbrand/Modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="65" column="28" lean-forward="true" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/tvbrand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/tvbrand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="91" column="13" lean-forward="true" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>

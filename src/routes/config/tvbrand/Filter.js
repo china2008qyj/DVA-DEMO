@@ -92,12 +92,12 @@ const Filter = ({
   )
 };
 
-Filter.propTypes = {
-  onAdd: PropTypes.func,
-  switchIsMotion: PropTypes.func,
-  form: PropTypes.object,
-  filter: PropTypes.object,
-  onFilterChange: PropTypes.func,
-};
+// Filter.propTypes = {
+//   onAdd: PropTypes.func,
+//   switchIsMotion: PropTypes.func,
+//   form: PropTypes.object,
+//   filter: PropTypes.object,
+//   onFilterChange: PropTypes.func,
+// };
 
 export default Form.create()(Filter)

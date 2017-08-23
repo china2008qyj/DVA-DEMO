@@ -25,6 +25,7 @@ module.exports = {
     v1test: `${APIV1}/test`,
     v2test: `${APIV2}/test`,
     tvbrand: `http://42.159.247.58:4324/AppProcess/1.0/tvbrands`,
+    dtvbrand: `http://42.159.247.58:4324/AppProcess/1.0/tvbrands/:id`,
     channel: `http://42.159.247.58:4324/AppProcess/1.0/tvbrands/:id/tvchannels`,
     log:`http://42.159.247.58:3978/api/GetLogUrl`,
   },

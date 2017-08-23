@@ -71,12 +71,11 @@ const List = ({ onDeleteItem, onEditItem,isMotion, location, ...tableProps }) =>
   )
 };
 
-List.propTypes = {
-  onDeleteItem: PropTypes.func,
-  onEditItem: PropTypes.func,
-  onRestart: PropTypes.func,
-  isMotion: PropTypes.bool,
-  location: PropTypes.object,
-};
+// List.propTypes = {
+//   onDeleteItem: PropTypes.func,
+//   onEditItem: PropTypes.func,
+//   isMotion: PropTypes.bool,
+//   location: PropTypes.object,
+// };
 
 export default List
