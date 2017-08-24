@@ -4,17 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/models/user.js" line="42" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="759aed6e-2ed2-4cc4-b206-e61e4b82bdc9" name="默认的" comment="分页修改">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/user.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/user.xml" />
+    <list default="true" id="759aed6e-2ed2-4cc4-b206-e61e4b82bdc9" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Layout/Sider.js" afterPath="$PROJECT_DIR$/components/Layout/Sider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/channels.js" afterPath="$PROJECT_DIR$/models/channels.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/log.js" afterPath="$PROJECT_DIR$/models/log.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/tvbrand.js" afterPath="$PROJECT_DIR$/models/tvbrand.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/user.js" afterPath="$PROJECT_DIR$/models/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/config/tvbrand/channels/Modal.js" afterPath="$PROJECT_DIR$/routes/config/tvbrand/channels/Modal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/login/index.js" afterPath="$PROJECT_DIR$/routes/login/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/channels.js" afterPath="$PROJECT_DIR$/services/channels.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,7 +25,7 @@
       <file leaf-file-name="user.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="-967">
               <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
@@ -436,7 +427,7 @@
       <workItem from="1502182656944" duration="48547000" />
       <workItem from="1502851442115" duration="918000" />
       <workItem from="1502852748095" duration="62799000" />
-      <workItem from="1503280957317" duration="113824000" />
+      <workItem from="1503280957317" duration="113856000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1501155233339</created>
@@ -529,11 +520,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503544466785</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="分页修改">
+      <created>1503569314006</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1503569314006</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="383084000" />
+    <option name="totallyTimeSpent" value="383116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -629,7 +627,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1078,7 +1076,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
+        <state relative-caret-position="-967">
           <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
