@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Form, Input, Modal} from 'antd'
 
 const FormItem = Form.Item;
-
 const formItemLayout = {
   labelCol: {
     span: 6,
@@ -30,10 +29,11 @@ const modal = ({
       }
       const data = {
         ...getFieldsValue(),
-        key: item.key,
+        id: item.id,
+        tvBrandId:item.tvBrandId,
       };
       //data.address = data.address.join(' ');
-      onOk(data)
+      onOk(data);
     })
   };
 
@@ -56,15 +56,35 @@ const modal = ({
           })(<Input />)}
         </FormItem>
         <FormItem label="频道名称" hasFeedback {...formItemLayout}>
-          {getFieldDecorator('channelName', {
-            initialValue: item.channelName,
-            rules: [
-              {
-                required: true,
-              },
-            ],
-          })(<Input />)}
-        </FormItem>
+        {getFieldDecorator('channelName', {
+          initialValue: item.channelName,
+          rules: [
+            {
+              required: true,
+            },
+          ],
+        })(<Input />)}
+      </FormItem>
+      {/*<FormItem label="频道ID" hasFeedback {...formItemLayout}>*/}
+        {/*{getFieldDecorator('id', {*/}
+          {/*initialValue: item.id,*/}
+          {/*rules: [*/}
+            {/*{*/}
+              {/*required: true,*/}
+            {/*},*/}
+          {/*],*/}
+        {/*})(<Input />)}*/}
+      {/*</FormItem>*/}
+        {/*<FormItem label="频道绑定" hasFeedback {...formItemLayout}>*/}
+          {/*{getFieldDecorator('tvBrandId', {*/}
+            {/*initialValue: item.tvBrandId,*/}
+            {/*rules: [*/}
+              {/*{*/}
+                {/*required: true,*/}
+              {/*},*/}
+            {/*],*/}
+          {/*})(<Input />)}*/}
+        {/*</FormItem>*/}
       </Form>
     </Modal>
   )

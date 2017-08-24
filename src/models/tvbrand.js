@@ -2,6 +2,13 @@ import modelExtend from 'dva-model-extend'
 import { create, remove, update ,query} from '../services/tvbrand'
 import { pageModel } from './common'
 
+
+function isEmptyObject(obj) {
+  for (let key in obj) {
+    return false;
+  }
+  return true;
+}
 export default modelExtend(pageModel, {
   namespace: 'tvbrand',
 
@@ -28,6 +35,10 @@ export default modelExtend(pageModel, {
 
   effects: {
     *query ({ payload = {} }, { call, put }){
+      if (isEmptyObject(payload)) {   //判断是否第一次进这个页面，是就获取第一页10条
+        payload["page"]=1;
+        payload["pageSize"]=10;
+      }
       const data = yield call(query, payload);
       if (data) {
         yield put({

@@ -7,6 +7,12 @@ import { config } from 'utils'
 const { query } = usersService;
 const { prefix } = config;
 
+function isEmptyObject(obj) {
+  for (let key in obj) {
+    return false;
+  }
+  return true;
+}
 export default modelExtend(pageModel, {
   namespace: 'user',
 
@@ -22,10 +28,7 @@ export default modelExtend(pageModel, {
     setup ({ dispatch, history }) {
       history.listen(location => {
         if (location.pathname === '/user') {
-          dispatch({
-            type: 'query',
-            payload: location.query,
-          })
+          dispatch({type: 'query', payload: location.query,})
         }
       })
     },
@@ -33,6 +36,10 @@ export default modelExtend(pageModel, {
 
   effects: {
     *query ({ payload = {} }, { call, put }){
+      if (isEmptyObject(payload)) {   //判断是否第一次进这个页面，是就获取第一页10条
+          payload["page"]=1;
+          payload["pageSize"]=10;
+      }
       const data = yield call(query, payload);
       if (data) {
         yield put({
