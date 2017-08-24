@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import { FilterItem } from 'components'
-import { Form, Button, Row, Col, DatePicker, Input, Cascader, Switch } from 'antd'
-import city from '../../../utils/city'
+import { Form, Button, Row, Col, DatePicker, Input} from 'antd'
 
 const Search = Input.Search;
 const { RangePicker } = DatePicker;
@@ -96,7 +95,7 @@ const Filter = ({
 //   onAdd: PropTypes.func,
 //   switchIsMotion: PropTypes.func,
 //   form: PropTypes.object,
-//   filt`er: PropTypes.object,
+//   filter: PropTypes.object,
 //   onFilterChange: PropTypes.func,
 // };
 

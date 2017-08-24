@@ -45,7 +45,6 @@ export default modelExtend(pageModel, {
     },
 
     *delete ({ payload }, { call, put }) {
-      console.log(payload);
       const data = yield call(remove, { id: payload });
       if (data.success) {
         yield put({ type: 'query' })
@@ -64,7 +63,6 @@ export default modelExtend(pageModel, {
     },
 
     *create ({ payload }, { call, put }) {
-      console.log(payload);
       const data = yield call(create, payload);
       if (data.success) {
         yield put({ type: 'hideModal' });
@@ -76,10 +74,12 @@ export default modelExtend(pageModel, {
 
     *update ({ payload }, { select, call, put }) {
       const id = yield select(({ tvbrand }) => tvbrand.currentItem.id);
-      console.log(id);
       const newtvbrand = { ...payload, id };
       const data = yield call(update, newtvbrand);
       if (data.success) {
+        if (data.st === 10002){
+          alert("家电品牌重复!");
+        }
         yield put({ type: 'hideModal' });
         yield put({ type: 'query' })
       } else {

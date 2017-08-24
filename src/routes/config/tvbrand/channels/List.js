@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Table, Modal } from 'antd'
 import styles from './List.less'
 import classnames from 'classnames'
-import AnimTableBody from '../../../components/DataTable/AnimTableBody'
+import AnimTableBody from '../../../../components/DataTable/AnimTableBody'
 import { DropOption } from 'components'
 import { Link } from 'dva/router'
 
@@ -15,9 +15,9 @@ const List = ({ onDeleteItem, onEditItem,isMotion, location, ...tableProps }) =>
       onEditItem(record)
     } else if (e.key === '2') {
       confirm({
-        title: '您确定要删除该电视品牌吗?',
+        title: '您确定要删除该电视频道吗?',
         onOk () {
-          onDeleteItem(record.id)
+          onDeleteItem(record)
         },
       })
     }
@@ -25,14 +25,13 @@ const List = ({ onDeleteItem, onEditItem,isMotion, location, ...tableProps }) =>
 
   const columns = [
     {
-      title: '家电品牌',
-      dataIndex: 'brandName',
-      key: 'brandName',
+      title: '频道号',
+      dataIndex: 'channelNumber',
+      key: 'channelNumber',
     }, {
-      title: '频道管理',
-      dataIndex: 'bid',
-      key: 'bid',
-      render: (text, record) => <Link to={`/config/tvbrand/${record.id}`}>打开频道管理</Link>,
+      title: '频道名称',
+      dataIndex: 'channelName',
+      key: 'channelName',
     }, {
       title: 'Operation',
       key: 'operation',

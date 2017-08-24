@@ -1,9 +1,9 @@
 import { request, config } from 'utils'
 const { api } = config;
-const {channel} =api;
+const {channels} =api;
 export async function query (params) {
   return request({
-    url: channel,
+    url: channels,
     method: 'get',
     data: params,
   })
@@ -11,23 +11,25 @@ export async function query (params) {
 
 export async function create (params) {
   return request({
-    url: channel.replace('/:id', ''),
+    url: channels.replace('/:id', ''),
     method: 'post',
     data: params,
   })
 }
 
 export async function remove (params) {
+  const  pa ={};
+  const  ur=channels.replace(':id',params.tvBrandId);
   return request({
-    url: channel,
+    url:ur +"/"+params.id,
     method: 'delete',
-    data: params,
+    data: pa,
   })
 }
 
 export async function update (params) {
   return request({
-    url: channel,
+    url: channels,
     method: 'patch',
     data: params,
   })

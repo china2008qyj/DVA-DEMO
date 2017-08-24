@@ -45,7 +45,7 @@ let database = [
   },
   {
     id: '42',
-    bpid: '1',
+    bpid: '41',
     mpid: '-1',
     name: '电视频道',
     route: '/config/tvbrand/:id',

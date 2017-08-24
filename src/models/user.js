@@ -61,8 +61,6 @@ export default modelExtend(pageModel, {
     },
 
     *restart ({ payload }, { call, put, select }) {
-      console.log(payload);
-      console.log(data);
       const data = yield call(restart, { dcdk: payload });
       const { selectedRowKeys } = yield select(_ => _.user);
       if (data.success) {

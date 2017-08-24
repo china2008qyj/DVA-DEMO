@@ -120,7 +120,6 @@ export default class RequestPage extends React.Component {
 
   handleRequest = () => {
     const { currntRequest } = this.state;
-    console.log("currntRequest:"+JSON.stringify( currntRequest));
     const { desc, ...requestParams } = currntRequest;
     this.setState({
       ...this.state,
@@ -142,7 +141,6 @@ export default class RequestPage extends React.Component {
     const state = this.state;
     const curretUrl = value.split('?')[0];
     const curretMethod = value.split('?')[1];
-    console.log(curretMethod+'--------------------');
     const currntItem = requestOptions.filter(item => {
       const { method = 'get' } = item;
       return curretUrl === item.url && curretMethod === method
