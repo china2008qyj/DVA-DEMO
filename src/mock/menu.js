@@ -11,7 +11,7 @@ let database = [
   {
     id: '2',
     bpid: '1',
-    name: '家庭管理',
+    name: '设备管理',
     icon: 'user',
     route: '/user',
   },
@@ -22,13 +22,13 @@ let database = [
     name: '详细信息',
     route: '/user/:id',
   },
-  {
-    id: '3',
-    bpid: '1',
-    name: 'Request',
-    icon: 'api',
-    route: '/request',
-  },
+  // {
+  //   id: '3',
+  //   bpid: '1',
+  //   name: 'Request',
+  //   icon: 'api',
+  //   route: '/request',
+  // },
   {
     id: '4',
     bpid: '1',
