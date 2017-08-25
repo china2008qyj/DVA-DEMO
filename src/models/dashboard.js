@@ -9,25 +9,25 @@ let zuimei = {
       name: zuimei.getWeatherName(actual.wea),
       temperature: actual.tmp,
       dateTime: new Date(actual.PTm).format('MM-dd hh:mm'),
-    }
+    };
     return weather
   },
 
   getIconName (wea, flg) {
-    let myDate = new Date()
-    let hour = myDate.getHours()
-    let num = 0
+    let myDate = new Date();
+    let hour = myDate.getHours();
+    let num = 0;
     if (wea.indexOf('/') !== -1) {
-      let weas = wea.split('/')
+      let weas = wea.split('/');
       if (hour < 12) {
-        num = zuimei.replaceIcon(weas[0])
+        num = zuimei.replaceIcon(weas[0]);
         if (num < 6) {
           num = `${num}_${flg}_night.png`
         } else {
           num = `${num}_${flg}.png`
         }
       } else if (hour >= 12) {
-        num = zuimei.replaceIcon(weas[1])
+        num = zuimei.replaceIcon(weas[1]);
         if (hour >= 18) {
           num = `${num}_${flg}_night.png`
         } else {
@@ -68,9 +68,9 @@ let zuimei = {
   },
 
   getWeatherName (wea) {
-    let name = ''
+    let name = '';
     if (wea.indexOf('/') !== -1) {
-      let weas = wea.split('/')
+      let weas = wea.split('/');
       name = `${zuimei.getWeatherByCode(weas[0])}转${zuimei.getWeatherByCode(weas[1])}`
     } else {
       name = zuimei.getWeatherByCode(wea)
@@ -80,8 +80,8 @@ let zuimei = {
   },
 
   getWeatherByCode (number) {
-    let wea = ''
-    let num = Number(number)
+    let wea = '';
+    let num = Number(number);
     if (num === 0) {
       wea = '晴'
     } else if (num === 1) {
@@ -162,7 +162,7 @@ let zuimei = {
 
     return wea
   },
-}
+};
 
 export default {
   namespace: 'dashboard',
@@ -190,7 +190,7 @@ export default {
   },
   subscriptions: {
     setup ({ dispatch }) {
-      dispatch({ type: 'query' })
+      dispatch({ type: 'query' });
       dispatch({ type: 'queryWeather' })
     },
   },
@@ -198,16 +198,16 @@ export default {
     *query ({
       payload,
     }, { call, put }) {
-      const data = yield call(query, parse(payload))
+      const data = yield call(query, parse(payload));
       yield put({ type: 'queryWeather', payload: { ...data } })
     },
     *queryWeather ({
       payload,
     }, { call, put }) {
-      const myCityResult = yield call(myCity, { flg: 0 })
-      const result = yield call(queryWeather, { cityCode: myCityResult.selectCityCode })
-      const weather = zuimei.parseActualData(result.data.actual)
-      weather.city = myCityResult.selectCityName
+      const myCityResult = yield call(myCity, { flg: 0 });
+      const result = yield call(queryWeather, { cityCode: myCityResult.selectCityCode });
+      const weather = zuimei.parseActualData(result.data.actual);
+      weather.city = myCityResult.selectCityName;
       yield put({ type: 'queryWeatherSuccess', payload: {
         weather,
       } })
